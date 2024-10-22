@@ -3,7 +3,19 @@ import { setBaseColor } from '/src/index/view/button'
 const lightModeIcon = `
   <svg theme-btn id="dark-mode" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
   stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="12" cy="12" r="10"></circle>
+    <!-- Gradient definition -->
+    <defs>
+      <linearGradient id="rainbowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#FF0000" /> <!-- Red -->
+        <stop offset="30%" stop-color="#FF7F00" /> <!-- Orange -->
+        <stop offset="45%" stop-color="#FFFF00" /> <!-- Yellow -->
+        <stop offset="50%" stop-color="#00FF00" /> <!-- Green -->
+        <stop offset="75%" stop-color="#0000FF" /> <!-- Blue -->
+        <stop offset="90%" stop-color="#4B0082" /> <!-- Indigo -->
+        <stop offset="100%" stop-color="#8B00FF" /> <!-- Violet -->
+      </linearGradient>
+    </defs>
+    <circle cx="12" cy="12" r="10" fill="url(#rainbowGradient)"></circle>
   </svg>
 `
 
@@ -14,7 +26,7 @@ const darkModeIcon = `
   </svg>
 `
 
-let dark = true
+let dark = true   
 
 const enableDarkMode = () => {
   const root = document.documentElement
