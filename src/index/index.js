@@ -41,7 +41,7 @@ export const render = async (canvas) => {
       modelViewMatrix: gl.getUniformLocation(program, 'modelViewMatrix'),
     },
   }
-  let verticesNDC = cartesianToNDC(gl, vertices)
+  let verticesNDC = cartesianToNDC(gl.canvas.width, gl.canvas.height, vertices)
   const buffer = initBuffer(gl, verticesNDC)
 
   drawScene(gl, programInfo, buffer)

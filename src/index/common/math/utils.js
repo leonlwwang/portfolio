@@ -1,6 +1,4 @@
-const cartesianToNDC = (gl, data) => {
-  const screenWidth = gl.canvas.width
-  const screenHeight = gl.canvas.height
+const cartesianToNDC = (screenWidth, screenHeight, data) => {
   for (let i = 0; i < data.length; i += 2) {
     data[i] = (data[i] / screenWidth - 0.5) * 2
     data[i + 1] = (data[i + 1] / screenHeight - 0.5) * -2
