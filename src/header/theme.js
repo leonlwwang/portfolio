@@ -43,7 +43,6 @@ export const loadTheme = (gl, program) => {
   const theme = document.querySelector('div[theme]')
   gl.uniform4f(colorLoc, 0.0, 0.0, 0.0, 1.0)
   theme.addEventListener('click', () => {
-    console.log(dark)
     if (dark) {
       theme.innerHTML = lightModeIcon
       enableDarkMode()
